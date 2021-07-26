@@ -222,7 +222,7 @@ public class DateTime.Widgets.CalendarView : Gtk.Grid {
 
     // TODO: As far as maya supports it use the Dbus Activation feature to run the calendar-app.
     public void show_date_in_maya (GLib.DateTime date) {
-        var command = "io.elementary.calendar --show-day %s".printf (date.format ("%F"));
+        var command = "@elementary_calendar@/bin/io.elementary.calendar --show-day %s".printf (date.format ("%F"));
 
         try {
             var appinfo = AppInfo.create_from_commandline (command, null, AppInfoCreateFlags.NONE);
